@@ -30,38 +30,38 @@ public class RestControllerAspect {
     @AfterReturning("execution(public * pe.joedayz.customerservice.api.rest.*Controller.createCustomer*(..))")
     public void afterCallingCreateCustomer(JoinPoint pjp) {
         logger.info(":::::AOP @AfterReturning Create Customer REST call:::::" + pjp);
-        counterService.increment("com.rollingstone.api.rest.CustomerController.createCustomer");
+        counterService.increment("pe.joedayz.customerservice.api.rest.CustomerController.createCustomer");
     }
 
     @AfterReturning("execution(public * pe.joedayz.customerservice.api.rest.*Controller.getAllCustomersByPage*(..))")
     public void afterCallingGetAllCustomersByPage(JoinPoint pjp) {
         logger.info(":::::AOP @AfterReturning Customer getAllCustomersByPage REST call:::::" + pjp);
 
-        counterService.increment("com.rollingstone.api.rest.CustomerController.getAllCustomersByPage");
+        counterService.increment("pe.joedayz.customerservice.api.rest.CustomerController.getAllCustomersByPage");
     }
 
     @AfterReturning("execution(public * pe.joedayz.customerservice.api.rest.*Controller.getAllCustomers*(..))")
     public void afterCallingGetAllCustomer(JoinPoint pjp) {
         logger.info(":::::AOP @AfterReturning CustomerController getAllCustomers REST call:::::" + pjp);
-        counterService.increment("com.rollingstone.api.rest.CustomerController.getAllCustomers");
+        counterService.increment("pe.joedayz.customerservice.api.rest.CustomerController.getAllCustomers");
     }
 
     @AfterReturning("execution(public * pe.joedayz.customerservice.api.rest.*Controller.getCustomer*(..))")
     public void afterCallingGetCustomer(JoinPoint pjp) {
         logger.info(":::::AOP @AfterReturning CustomerController getCustomer REST call:::::" + pjp);
-        counterService.increment("com.rollingstone.api.rest.CustomerController.getCustomer");
+        counterService.increment("pe.joedayz.customerservice.api.rest.CustomerController.getCustomer");
     }
 
     @AfterReturning("execution(public * pe.joedayz.customerservice.api.rest.*Controller.updateCustomer*(..))")
     public void afterCallingUpdateCustomer(JoinPoint pjp) {
         logger.info(":::::AOP @AfterReturning CustomerController updateCustomer REST call:::::" + pjp);
-        counterService.increment("com.rollingstone.api.rest.CustomerController.updateCustomer");
+        counterService.increment("pe.joedayz.customerservice.api.rest.CustomerController.updateCustomer");
     }
 
     @AfterReturning("execution(public * pe.joedayz.customerservice.api.rest.*Controller.deleteCustomer*(..))")
     public void afterCallingDeleteCustomer(JoinPoint pjp) {
         logger.info(":::::AOP @AfterReturning CustomerController deleteCustomer REST call:::::" + pjp);
-        counterService.increment("com.rollingstone.api.rest.CustomerController.deleteCustomer");
+        counterService.increment("pe.joedayz.customerservice.api.rest.CustomerController.deleteCustomer");
     }
 
     @AfterThrowing(pointcut = "execution(public * pe.joedayz.customerservice.api.rest.*Controller.*(..))", throwing = "e")

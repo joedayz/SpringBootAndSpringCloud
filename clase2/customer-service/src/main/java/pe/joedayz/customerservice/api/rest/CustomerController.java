@@ -18,7 +18,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value="/customerservice/v1/customer")
+@RequestMapping(value="/customer-service/v1/customer")
 public class CustomerController extends AbstractRestController{
 
     @Autowired
@@ -34,10 +34,10 @@ public class CustomerController extends AbstractRestController{
                                HttpServletResponse response) {
         Customer createdCustomer = this.customerService.createCustomer(customer);
         if (createdCustomer != null){
-            counterService.increment("com.rollingstone.Customer.created.success");
+            counterService.increment("pe.joedayz.Customer.created.success");
             eventPublisher.publishEvent(new ServiceEvent(this, createdCustomer, "CustomerCreated" ));
         }else {
-            counterService.increment("com.rollingstone.Customer.created.failure");
+            counterService.increment("pe.joedayz.Customer.created.failure");
         }
         response.setHeader("Location", request.getRequestURL().append("/").append(createdCustomer.getId()).toString());
     }
@@ -88,7 +88,7 @@ public class CustomerController extends AbstractRestController{
         checkResourceFound(this.customerService.getCustomer(id));
         if (id != customer.getId())
             throw new HTTP400Exception("ID doesn't match!");
-        counterService.increment("com.rollingstone.Customer.updated.success");
+        counterService.increment("pe.joedayz.Customer.updated.success");
 
         this.customerService.updateCustomer(customer);
     }
@@ -98,7 +98,7 @@ public class CustomerController extends AbstractRestController{
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCustomer(@PathVariable("id") Long id, HttpServletRequest request, HttpServletResponse response) {
         checkResourceFound(this.customerService.getCustomer(id));
-        counterService.increment("com.rollingstone.Customer.deleted.success");
+        counterService.increment("pe.joedayz.Customer.deleted.success");
         this.customerService.deleteCustomer(id);
     }
 }
