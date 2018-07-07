@@ -26,6 +26,8 @@ security:
     enabled: false
 
 management:
+  security:
+    enabled: false
   port: 9002
 
 
