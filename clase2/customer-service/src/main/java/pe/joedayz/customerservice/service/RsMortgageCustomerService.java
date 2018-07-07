@@ -61,7 +61,7 @@ public class RsMortgageCustomerService {
 		Page pageOfCustomers = customerRepository.findAll(new PageRequest(page, size));
 		// example of adding to the /metrics
 		if (size > 50) {
-			counterService.increment("com.rollingstone.getAll.largePayload");
+			counterService.increment("pe.joedayz.getAll.largePayload");
 		}
 		return pageOfCustomers;
 	}
