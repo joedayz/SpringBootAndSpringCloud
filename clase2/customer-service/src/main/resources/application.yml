@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active:
+      mysql
+  cloud:
+    config:
+      uri: http://localhost:9000
+
+server:
+  port: 9001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-host1:8761/eureka/,http://eureka-host2:8762/eureka/
+
+spring.jmx:
+  enabled: false
+
+spring.datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/rsmortgage;MODE=MySQL
+
+security:
+  basic:
+    enabled: false
+
+management:
+  port: 9002
+
+
+#default project info followed by actual injected pom-specified values.
+project:
+  name: spring-boot-rest-example
+  version: 0.1
+  description: boot-example default description
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
