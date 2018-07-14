@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active:
+      mysql
+  cloud:
+    config:
+      uri: http://localhost:9000
+server:
+  port: 9003
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-host1:8761/eureka/,http://eureka-host2:8762/eureka/
+    fetchRegistry: true
+
+spring.jmx:
+   enabled: false
+
+
+#todo: make sure to always enable security in production
+security:
+  basic:
+    enabled: false
+
+#management endpoints on a separate port
+management:
+  port: 9004
+  security:
+    enabled: false # management port is internal only. no need to secure it.
+
+#default project info followed by actual injected pom-specified values.
+project:
+  name: ustomer-account-service
+  version: 0.1
+  description: customer-account-service
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
