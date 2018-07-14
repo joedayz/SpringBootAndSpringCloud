@@ -122,12 +122,9 @@ public class CustomerAccountService {
     	if (account != null && account.getCustomer() != null){
     		
     		log.info("In service account create"+ account.getCustomer().getId());
-    		if (customerClient == null){
-        		log.info("In customerClient null got customer");
-    		}
-    		else {
-    			log.info("In customerClient not null got customer");
-    		}
+
+    		log.info("In customerClient null got customer");
+
    			createdAccount  = customerAccountRepository.save(account);
     	}
     	else {
@@ -144,7 +141,7 @@ public class CustomerAccountService {
         
         // example of adding to the /metrics
         if (size > 50) {
-            counterService.increment("com.rollingstone.getAll.largePayload");
+            counterService.increment("pe.joedayz.customerserviceaccount.getAll.largePayload");
         }
         return pageOfAccounts;
     }
