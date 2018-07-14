@@ -17,9 +17,6 @@ eureka:
 spring.jmx:
   enabled: false
 
-spring.datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/rsmortgage;MODE=MySQL
 
 security:
   basic:
