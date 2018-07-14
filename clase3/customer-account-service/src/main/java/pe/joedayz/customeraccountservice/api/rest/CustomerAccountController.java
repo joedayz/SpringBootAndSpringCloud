@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import pe.joedayz.customeraccountservice.domain.Account;
 import pe.joedayz.customeraccountservice.domain.Customer;
+import pe.joedayz.customeraccountservice.exception.HTTP400Exception;
 import pe.joedayz.customeraccountservice.service.CustomerAccountService;
 /*
  * Demonstrates how to set up RESTful API endpoints using Spring MVC
