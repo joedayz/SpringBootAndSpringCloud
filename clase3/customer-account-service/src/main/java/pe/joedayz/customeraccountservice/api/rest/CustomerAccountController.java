@@ -28,7 +28,7 @@ import pe.joedayz.customeraccountservice.service.CustomerAccountService;
  */
 
 @RestController
-@RequestMapping(value = "/rsmortgage-customer-account-service/v1/customer-account")
+@RequestMapping(value = "/customer-account-service/v1/customer-account")
 public class CustomerAccountController extends AbstractRestController {
 
     @Autowired
