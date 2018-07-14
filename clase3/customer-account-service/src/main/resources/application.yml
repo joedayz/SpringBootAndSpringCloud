@@ -31,7 +31,7 @@ management:
 
 #default project info followed by actual injected pom-specified values.
 project:
-  name: ustomer-account-service
+  name: customer-account-service
   version: 0.1
   description: customer-account-service
 info:

@@ -1,4 +1,4 @@
-package com.rollingstone.domain;
+package pe.joedayz.customeraccountservice.domain;
 
 import java.util.Date;
 
@@ -19,6 +19,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 /*
  * A User POJO serving as an Entity as well as a Data Transfer Object i.e DTO
