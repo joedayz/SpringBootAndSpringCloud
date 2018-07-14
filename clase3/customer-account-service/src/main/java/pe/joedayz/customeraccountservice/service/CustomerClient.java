@@ -15,10 +15,10 @@ import pe.joedayz.customeraccountservice.domain.Customer;
 interface CustomerClient {
 	
 	
-	@RequestMapping(method = RequestMethod.GET, value="/customerservice/v1/customer/all")
+	@RequestMapping(method = RequestMethod.GET, value="/customer-service/v1/customer/all")
 	List<Customer> getCustomers();
 	
-	@RequestMapping(method = RequestMethod.GET, value="/customerservice/v1/customer/simple/{id}")
+	@RequestMapping(method = RequestMethod.GET, value="/customer-service/v1/customer/simple/{id}")
 	Customer getCustomer(@PathVariable("id") Long id);
 	
 }

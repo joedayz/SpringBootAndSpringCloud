@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.rollingstone.domain.Customer;
-import com.rollingstone.domain.Account;
-import com.rollingstone.exception.HTTP400Exception;
-import com.rollingstone.service.RsMortgageCustomerAccountService;
+
+import pe.joedayz.customeraccountservice.domain.Account;
+import pe.joedayz.customeraccountservice.domain.Customer;
+import pe.joedayz.customeraccountservice.service.CustomerAccountService;
 /*
  * Demonstrates how to set up RESTful API endpoints using Spring MVC
  */
@@ -31,7 +31,7 @@ import com.rollingstone.service.RsMortgageCustomerAccountService;
 public class CustomerAccountController extends AbstractRestController {
 
     @Autowired
-    private RsMortgageCustomerAccountService customerAccountService;
+    private CustomerAccountService customerAccountService;
   
     @RequestMapping(value = "",
             method = RequestMethod.POST,
@@ -51,8 +51,8 @@ public class CustomerAccountController extends AbstractRestController {
     public
     @ResponseBody
     Page<Account> getAllCustomersAccountByPage(@RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
-                                      @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
-                                      HttpServletRequest request, HttpServletResponse response) {
+                                               @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
+                                               HttpServletRequest request, HttpServletResponse response) {
         return this.customerAccountService.getAllAccountsByPage(page, size);
     }
     
